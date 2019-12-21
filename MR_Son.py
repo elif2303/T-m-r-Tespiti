@@ -4,6 +4,27 @@ from matplotlib import pyplot as plt
 from numpy import*
 
 # Reading in and displaying our image
+
+
+
+#sistem kütüphanesini yükleme
+#System.loadLibrary(Core.NATIVE_LIBRARY_NAME)
+#görüntüyü barındıracak nesne
+
+#görüntü dosyasını oku
+#imageArray=Imgcodecs.imread('C:/Users/Elif/Documents/GitHub/Tumor-Tespiti/1.Hasta -AX T2 FSE-23822/000000.jpg')
+#mat nesnesinin satır ve sutun sayısı
+#imshow(imageArray.rows())
+#cimshow(imageArray.cols())
+
+
+
+#matris1=np.array(['C:/Users/Elif/Documents/GitHub/Tumor-Tespiti/1.Hasta -AX T2 FSE-23822/000000.jpg'])
+#cv2.imshow(matris1,[])
+
+
+
+import sys
 from PIL import Image
 
 images = map(Image.open, ['000000.jpg', '000001.jpg', '000002.jpg','000003.jpg','000004.jpg'])
