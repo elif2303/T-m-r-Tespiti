@@ -3,6 +3,61 @@ import numpy as np
 from matplotlib import pyplot as plt
 
 # Reading in and displaying our image
+from PIL import Image
+
+images = map(Image.open, ['000000.jpg', '000001.jpg', '000002.jpg','000003.jpg','000004.jpg'])
+#list_im = ['000000.jpg','000002.jpg','000003.jpg','000004.jpg']
+new_im = Image.new('RGB', (1250,250)) #creates a new empty image, RGB mode, and size 444 by 95
+
+x_offset = 0
+for im in images:
+  new_im.paste(im, (x_offset,0))
+  x_offset += im.size[0]
+
+new_im.save('test.jpg')
+
+"""
+for elem in list_im:
+    for i in range(0,4000,250):
+        im=Image.open(elem)
+        new_im.paste(im, (i,0))
+"""
+
+
+
+"""
+
+import sys
+from PIL import Image
+
+images = map(Image.open, ['000000.jpg', '000001.jpg', '000002.jpg'])
+widths, heights = Zip(*(i.size for i in images))
+
+total_width = sum(widths)
+max_height = max(heights)
+
+new_im = Image.new('RGB', (total_width, max_height))
+
+x_offset = 0
+for im in images:
+  new_im.paste(im, (x_offset,0))
+  x_offset += im.size[0]
+
+new_im.save('test1.jpg')
+
+"""
+
+
+"""
+[X,map]=cv2.imread('1.Hasta -AX T2 FSE-23822')              
+montage(X,map,'Size',[6,6])
+cv2.imshow(X,[])
+cv2.waitKey(0)        # Wait for a key press to
+cv2.destroyAllWindows # close the img window.
+"""
+
+
+"""
 image = cv2.imread('000002.jpg')
 cv2.imshow('Original', image)
 # Create our shapening kernel, it must equal to one eventually
@@ -47,3 +102,4 @@ plt.show()
 
 cv2.imshow("Opening", opening)
 cv2.waitKey(0)
+"""
